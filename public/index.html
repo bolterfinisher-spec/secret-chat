@@ -1,73 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>BLADE CORPORATION</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>LostOnes Chat</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Splash Screen -->
-<div id="splash">
-    <div class="logo">BLADE CORPORATION</div>
-    <div class="subtitle">secure network initializing...</div>
+<div id="login">
+    <h1>LostOnes</h1>
+    <input id="username" placeholder="Username">
+    <button onclick="join()">Enter</button>
 </div>
 
-<!-- Login Panel -->
-<div id="loginPanel">
+<div id="chat" class="hidden">
+    <div id="messages"></div>
 
-    <h2>ACCESS TERMINAL</h2>
-
-    <input 
-        type="text" 
-        id="username" 
-        placeholder="USERNAME"
-        autocomplete="off"
-    >
-
-    <input 
-        type="password" 
-        id="password" 
-        placeholder="PASSWORD"
-        autocomplete="off"
-    >
-
-    <button onclick="login()">
-        ACCESS
-    </button>
-
-</div>
-
-<!-- Chat Container -->
-<div id="chatContainer">
-
-    <!-- Sidebar -->
-    <div id="sidebar">
-        <h3>BLADE NETWORK</h3>
+    <div class="inputBox">
+        <input id="msgInput" placeholder="Message">
+        <button onclick="send()">Send</button>
     </div>
-
-    <!-- Chat Area -->
-    <div id="chatArea">
-
-        <div id="messages"></div>
-
-        <div id="inputArea">
-            <input
-                type="text"
-                id="messageInput"
-                placeholder="enter message..."
-                onkeypress="if(event.key==='Enter') sendMessage()"
-            >
-        </div>
-
-    </div>
-
 </div>
 
-<!-- Socket.IO -->
 <script src="/socket.io/socket.io.js"></script>
-
-<!-- Client Script -->
 <script src="client.js"></script>
 
 </body>
